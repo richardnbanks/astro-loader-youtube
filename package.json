@@ -1,0 +1,35 @@
+{
+  "name": "@richardnbanks/astro-loader-youtube",
+  "description": "This package provides a YouTube video loader for Astro. It allows you to load and parse YouTube video data, and use the data in your Astro site.",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/richardnbanks/astro-youtube-loader",
+  "author": "Richard Bakns <hello@richardbanks.dev>",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "keywords": [
+    "astro",
+    "astro-content-loader",
+    "astro-loader",
+    "youtube",
+    "withastro"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "astro": "^5.1.7",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "astro": "^4.0.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
