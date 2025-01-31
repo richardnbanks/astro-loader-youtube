@@ -14,7 +14,7 @@ importers:
     devDependencies:
       astro:
         specifier: ^5.1.7
-        version: 5.2.1(rollup@4.32.1)(typescript@5.7.3)
+        version: 5.2.2(rollup@4.32.1)(typescript@5.7.3)
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -527,8 +527,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@5.2.1:
-    resolution: {integrity: sha512-OYR2kUo9EqX6OYZ1OmM14xP8mjFwgrk1FzIr+3K3tS0gCCKJsXtfboCUhX3lODZFIsmY/on7NPZd+2PURA0R2Q==}
+  astro@5.2.2:
+    resolution: {integrity: sha512-KfLlrpIIokaSQsRsNxov+SVu7EI7F45syHbBdxuSuh2YKG9fEBrbsxKkJ9CGI67G4i+tXGzlHT0OQjSeMMBzuQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2058,7 +2058,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.2.1(rollup@4.32.1)(typescript@5.7.3):
+  astro@5.2.2(rollup@4.32.1)(typescript@5.7.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.5.0
