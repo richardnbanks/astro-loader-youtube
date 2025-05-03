@@ -21,7 +21,7 @@ Firstly add the content loader to your content configuration:
 ```typescript
 // src/content.config.ts
 import { defineCollection } from "astro:content";
-import { youtubeLoader } from "@richardnbanks/astro-youtube-loader";
+import { youtubeLoader } from "@richardnbanks/astro-loader-youtube";
 
 const youtube = defineCollection({
   loader: youtubeLoader({
