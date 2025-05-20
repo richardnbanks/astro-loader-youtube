@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       googleapis:
-        specifier: ^144.0.0
-        version: 144.0.0
+        specifier: ^148.0.0
+        version: 148.0.0
     devDependencies:
       astro:
         specifier: ^5.1.7
@@ -813,8 +813,8 @@ packages:
     resolution: {integrity: sha512-/fhDZEJZvOV3X5jmD+fKxMqma5q2Q9nZNSF3kn1F18tpxmA86BcTxAGBQdM0N89Z3bEaIs+HVznSmFJEAmMTjA==}
     engines: {node: '>=14.0.0'}
 
-  googleapis@144.0.0:
-    resolution: {integrity: sha512-ELcWOXtJxjPX4vsKMh+7V+jZvgPwYMlEhQFiu2sa9Qmt5veX8nwXPksOWGGN6Zk4xCiLygUyaz7xGtcMO+Onxw==}
+  googleapis@148.0.0:
+    resolution: {integrity: sha512-8PDG5VItm6E1TdZWDqtRrUJSlBcNwz0/MwCa6AL81y/RxPGXJRUwKqGZfCoVX1ZBbfr3I4NkDxBmeTyOAZSWqw==}
     engines: {node: '>=14.0.0'}
 
   gopd@1.2.0:
@@ -2392,7 +2392,7 @@ snapshots:
       - encoding
       - supports-color
 
-  googleapis@144.0.0:
+  googleapis@148.0.0:
     dependencies:
       google-auth-library: 9.15.0
       googleapis-common: 7.2.0
