@@ -14,7 +14,7 @@
     {
       "matchManagers": ["ci"],
       "enabled": false
-    },
+    }
   ],
   "assigneesFromCodeOwners": true
 }
