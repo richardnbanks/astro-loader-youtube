@@ -8,11 +8,13 @@
     },
     {
       "matchManagers": ["npm"],
-      "groupName": "{{manager}}"
+      "groupName": "{{manager}}",
+      "prTitle": "chore(deps): update {{manager}}"
     },
     {
       "matchManagers": ["ci"],
       "enabled": false
-    }
-  ]
+    },
+  ],
+  "assigneesFromCodeOwners": true
 }
