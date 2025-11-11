@@ -30,6 +30,6 @@
     "astro": "^4.0.0 || ^5.0.0"
   },
   "dependencies": {
-    "googleapis": "^165.0.0"
+    "googleapis": "^166.0.0"
   }
 }
