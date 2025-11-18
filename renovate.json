@@ -4,12 +4,11 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": false
+      "automerge": true
     },
     {
-      "matchManagers": ["npm"],
-      "groupName": "{{manager}}",
-      "prTitle": "chore(deps): update {{manager}}"
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
     },
     {
       "matchManagers": ["ci"],
