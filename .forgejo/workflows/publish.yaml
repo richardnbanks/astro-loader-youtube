@@ -26,7 +26,7 @@ jobs:
         run: |
           env
           pnpm config set @forgejo:registry ${{github.SERVER_URL}}/api/packages/${{github.REPOSITORY_OWNER}}/npm/
-          pnpm config set //${{github.SERVER_URL}}/api/packages/${{github.REPOSITORY_OWNER}}/npm/:_authToken ${{secrets.PACKAGE_TOKEN}}
+          pnpm config set -- '//code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/:_authToken' "${{secrets.PACKAGE_TOKEN}}"
           pnpm config list
 
       - name: Cache pnpm store
@@ -41,4 +41,4 @@ jobs:
         run: pnpm install --store ${{ env.PNPM_CACHE_FOLDER }}
 
       - name: Deploy Package
-        run: pnpm publish --tag next
+        run: pnpm publish --tag next --scope=@forgejo
