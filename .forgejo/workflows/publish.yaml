@@ -22,13 +22,6 @@ jobs:
         with:
           version: 10
 
-      - name: set npm config
-        run: |
-          env
-          pnpm config set registry https://code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/
-          pnpm config set -- '//code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/:_authToken' "${{secrets.PACKAGE_TOKEN}}"
-          pnpm config list
-
       - name: Cache pnpm store
         uses: actions/cache@v5
         with:
@@ -39,6 +32,13 @@ jobs:
 
       - name: Install node packages
         run: pnpm install --store ${{ env.PNPM_CACHE_FOLDER }}
+
+      - name: set npm config
+        run: |
+          env
+          pnpm config set registry https://code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/
+          pnpm config set -- '//code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/:_authToken' "${{secrets.PACKAGE_TOKEN}}"
+          pnpm config list
 
       - name: Deploy Package
         run: pnpm publish --tag next
