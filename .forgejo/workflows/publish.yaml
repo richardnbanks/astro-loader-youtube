@@ -1,0 +1,42 @@
+name: Deploy Package
+
+on:
+  push:
+    branches:
+      - 'main'
+
+env:
+  PNPM_CACHE_FOLDER: .pnpm-store
+
+jobs:
+  deploy:
+    name: Deploy Package
+    runs-on: docker
+    container: node:24-alpine
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: set npm config
+        run: |
+          pnpm config set @{scope}:registry ${{github.SERVER_URL}}/api/packages/{owner}/npm/
+          pnpm config set "${{github.SERVER_URL}}/api/packages/{owner}/npm/:_authToken=${{secrets.OWNER_TOKEN}}"
+
+      - name: Cache pnpm store
+        uses: actions/cache@v5
+        with:
+          path: ${{ env.PNPM_CACHE_FOLDER }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Install node packages
+        run: pnpm install --store ${{ env.PNPM_CACHE_FOLDER }}
+
+      - name: Deploy Package
+        run: pnpm publish --tag next

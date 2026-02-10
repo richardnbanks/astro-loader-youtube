@@ -44,21 +44,26 @@ export function youtubeLoader({
             first = video.id.videoId;
           }
 
-          const data = await context.parseData({
-            id: video.id.videoId,
-            data: JSON.parse(JSON.stringify(video.snippet)),
-          });
+          try {
+            const data = await context.parseData({
+              id: video.id.videoId,
+              data: JSON.parse(JSON.stringify(video.snippet)),
+            });
 
-          const digest = context.generateDigest(data);
+            const digest = context.generateDigest(data);
 
-          context.store.set({
-            id: video.id.videoId,
-            data,
-            digest,
-            rendered: {
-              html: video.id.videoId,
-            },
-          });
+            context.store.set({
+              id: video.id.videoId,
+              data,
+              digest,
+              rendered: {
+                html: video.id.videoId,
+              },
+            });
+          } catch (e) {
+            console.log(e);
+            context.logger.error(`Could not load video from YouTube.`);
+          }
         }
       }
 
