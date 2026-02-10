@@ -25,7 +25,7 @@ jobs:
       - name: set npm config
         run: |
           pnpm config set @{scope}:registry ${{github.SERVER_URL}}/api/packages/{owner}/npm/
-          pnpm config set "${{github.SERVER_URL}}/api/packages/{owner}/npm/:_authToken=${{secrets.OWNER_TOKEN}}"
+          pnpm config set "${{github.SERVER_URL}}/api/packages/{owner}/npm/:_authToken=${{secrets.PACKAGE_TOKEN}}"
 
       - name: Cache pnpm store
         uses: actions/cache@v5
