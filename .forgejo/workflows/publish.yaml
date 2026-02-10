@@ -25,8 +25,7 @@ jobs:
       - name: set npm config
         run: |
           env
-          echo 'pnpm config set @forgejo:registry ${{github.SERVER_URL}}/api/packages/${{github.REPOSITORY_OWNER]}/npm/'
-          echo 'pnpm config set "//${{github.SERVER_URL}}/api/packages/${{github.REPOSITORY_OWNER]}/npm/:_authToken ${{secrets.PACKAGE_TOKEN}}"'
+          pnpm config set @forgejo:registry ${{github.SERVER_URL}}/api/packages/${{github.REPOSITORY_OWNER]}/npm/
           cat .npmrc
 
       - name: Cache pnpm store
