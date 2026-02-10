@@ -26,8 +26,8 @@ jobs:
         run: |
           env
           pnpm config set @forgejo:registry ${{github.SERVER_URL}}/api/packages/${{github.REPOSITORY_OWNER}}/npm/
-          pnpm config set //${{github.SERVER_URL}}/api/packages/{owner}/npm/:_authToken ${{secrets.PACKAGE_TOKEN}}
-          cat .npmrc
+          pnpm config set //${{github.SERVER_URL}}/api/packages/${{github.REPOSITORY_OWNER}}/npm/:_authToken ${{secrets.PACKAGE_TOKEN}}
+          pnpm config list
 
       - name: Cache pnpm store
         uses: actions/cache@v5
