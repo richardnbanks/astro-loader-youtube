@@ -2,8 +2,8 @@ name: Deploy Package
 
 on:
   push:
-    branches:
-      - 'main'
+    tags:
+      - 'v*'
 
 env:
   PNPM_CACHE_FOLDER: .pnpm-store
@@ -38,7 +38,6 @@ jobs:
           env
           pnpm config set registry https://code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/
           pnpm config set -- '//code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/:_authToken' "${{secrets.PACKAGE_TOKEN}}"
-          pnpm config list
 
       - name: Deploy Package
-        run: pnpm publish --tag next
+        run: pnpm publish
