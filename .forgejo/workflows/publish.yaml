@@ -12,7 +12,7 @@ jobs:
   deploy:
     name: Deploy Package
     runs-on: docker
-    container: node:24-alpine
+    container: node:24
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
