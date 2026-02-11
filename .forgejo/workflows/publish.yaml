@@ -36,7 +36,7 @@ jobs:
       - name: set npm config
         run: |
           env
-          pnpm config set registry https://code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/
+          pnpm config set @richardnbanks:registry https://code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/
           pnpm config set -- '//code.richardbanks.dev/api/packages/${{github.REPOSITORY_OWNER}}/npm/:_authToken' "${{secrets.PACKAGE_TOKEN}}"
 
       - name: Deploy Package
