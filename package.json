@@ -5,6 +5,10 @@
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/richardnbanks/astro-loader-youtube",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardnbanks/astro-loader-youtube.git"
+  },
   "author": "Richard Banks <hello@richardbanks.dev>",
   "exports": {
     ".": "./index.ts"
