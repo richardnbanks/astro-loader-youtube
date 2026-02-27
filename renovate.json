@@ -4,11 +4,11 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
+      "automerge": false
     },
     {
       "matchDepTypes": ["devDependencies"],
-      "automerge": true
+      "automerge": false
     },
     {
       "matchManagers": ["ci"],
