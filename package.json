@@ -26,12 +26,12 @@
   ],
   "scripts": {},
   "devDependencies": {
-    "astro": "^5.1.7",
+    "astro": "^6.0.0",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
-    "astro": "^4.0.0 || ^5.0.0"
+    "astro": "^4.0.0 || ^5.0.0 || ^6.0.0"
   },
   "dependencies": {
     "googleapis": "^171.0.0"
