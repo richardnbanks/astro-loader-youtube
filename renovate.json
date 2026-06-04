@@ -59,7 +59,7 @@
       "description": "Group patches together with standard update title",
       "groupName": "{{manager}}",
       "matchManagers": [
-        "npm",
+        "npm"
       ],
       "matchUpdateTypes": [
         "patch",
