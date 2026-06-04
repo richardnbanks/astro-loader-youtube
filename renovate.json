@@ -1,46 +1,91 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:best-practices"],
-	"internalChecksFilter": "strict",
-	"rebaseWhen": "behind-base-branch",
-	"ignorePaths": ["**/node_modules/**"],
-	"osvVulnerabilityAlerts": true,
-	"vulnerabilityAlerts": {
-		"labels": ["security"],
-		"commitMessageSuffix": "[SECURITY]"
-	},
-	"packageRules": [
-		{
-			"description": "Safe to automerge for non-breaking, minimum-risk patches",
-			"matchUpdateTypes": ["patch", "pin", "digest"],
-			"automerge": true
-		},
-		{
-			"description": "Require manual review for major upgrades",
-			"matchManagers": ["npm"],
-			"matchUpdateTypes": ["major"],
-			"groupName": "{{manager}} (major)",
-			"automerge": false
-		},
-		{
-			"description": "Require manual review for minor updates to mitigate supply chain risk",
-			"matchManagers": ["npm"],
-			"matchUpdateTypes": ["minor"],
-			"groupName": "{{manager}} (minor)",
-			"automerge": false
-		},
-		{
-			"description": "Group patches together with standard update title",
-			"matchManagers": ["npm"],
-			"matchUpdateTypes": ["patch", "pin", "digest"],
-			"groupName": "{{manager}}"
-		},
-		{
-			"description": "Prevent silent manipulation of pinned action digests inside the same version",
-			"matchFileNames": [".forgejo/workflows/**"],
-			"matchUpdateTypes": ["pinDigest"],
-			"enabled": false
-		}
-	],
-	"assigneesFromCodeOwners": true
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "assigneesFromCodeOwners": true,
+  "branchNameStrict": true,
+  "commitMessageExtra": "",
+  "extends": [
+    "config:best-practices",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    ":separateMultipleMajorReleases",
+    ":pinDependencies",
+    ":ignoreModulesAndTests"
+  ],
+  "internalChecksFilter": "strict",
+  "minimumReleaseAge": "3 days",
+  "osvVulnerabilityAlerts": true,
+  "packageRules": [
+    {
+      "automerge": true,
+      "description": "Safe to automerge for non-breaking, minimum-risk patches",
+      "matchUpdateTypes": [
+        "patch",
+        "pin",
+        "digest"
+      ]
+    },
+    {
+      "addLabels": [
+        "dependencies"
+      ],
+      "automerge": false,
+      "description": "Require manual review for major upgrades",
+      "groupName": "{{manager}} (major)",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
+    },
+    {
+      "addLabels": [
+        "dependencies"
+      ],
+      "automerge": false,
+      "description": "Require manual review for minor updates to mitigate supply chain risk",
+      "groupName": "{{manager}} (minor)",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ]
+    },
+    {
+      "addLabels": [
+        "dependencies"
+      ],
+      "description": "Group patches together with standard update title",
+      "groupName": "{{manager}}",
+      "matchManagers": [
+        "npm",
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "pin",
+        "digest"
+      ]
+    },
+    {
+      "description": "Prevent silent manipulation of pinned action digests inside the same version",
+      "enabled": false,
+      "matchFileNames": [
+        ".forgejo/workflows/**"
+      ],
+      "matchUpdateTypes": [
+        "pinDigest"
+      ]
+    }
+  ],
+  "prCreation": "not-pending",
+  "rebaseWhen": "behind-base-branch",
+  "vulnerabilityAlerts": {
+    "addLabels": [
+      "security"
+    ],
+    "assigneesFromCodeOwners": true,
+    "commitMessagePrefix": "security(deps):",
+    "commitMessageSuffix": ""
+  }
 }
