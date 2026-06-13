@@ -13,11 +13,11 @@ importers:
         version: 173.0.0
     devDependencies:
       astro:
-        specifier: 6.4.3
-        version: 6.4.3(rollup@4.61.0)
+        specifier: 6.4.6
+        version: 6.4.6(rollup@4.61.0)
       prettier:
-        specifier: 3.8.3
-        version: 3.8.3
+        specifier: 3.8.4
+        version: 3.8.4
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -632,8 +632,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@6.4.3:
-    resolution: {integrity: sha512-heArIk8zLcxuoj1WgBH2zGdAD8zKSU1mEcBvS6hYMEHRPlbtvB+4Y8ri9Z27hzeryvGaFgrH32zjghEfV2y07g==}
+  astro@6.4.6:
+    resolution: {integrity: sha512-48OBTBKR9ctbf+DQxpOuxGl8ebfn59zTuNQMBzptmG/Mi/H8IdfMSbJgGuX1I/4U6g9yazG1p4BHlf4+2hWU4Q==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1336,8 +1336,8 @@ packages:
     resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier@3.8.3:
-    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2184,7 +2184,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@6.4.3(rollup@4.61.0):
+  astro@6.4.6(rollup@4.61.0):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@astrojs/internal-helpers': 0.10.0
@@ -3223,7 +3223,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier@3.8.3: {}
+  prettier@3.8.4: {}
 
   prismjs@1.30.0: {}
 
