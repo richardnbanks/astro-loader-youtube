@@ -27,7 +27,7 @@
   "scripts": {},
   "devDependencies": {
     "astro": "6.4.6",
-    "prettier": "3.8.3",
+    "prettier": "3.9.3",
     "typescript": "5.9.3"
   },
   "peerDependencies": {
